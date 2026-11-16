@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyChat</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+
+    <!-- Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- =========================
+             AUTH SCREEN
+        ========================== -->
+        <section id="authSection" class="auth-section">
+
+            <div class="auth-card">
+
+                <div class="logo">
+                    <span>My</span>Chat
+                </div>
+
+                <p class="auth-subtitle">
+                    Simple. Fast. Everyone together.
+                </p>
+
+
+                <!-- SIGN UP -->
+                <div id="signupBox" class="auth-box">
+
+                    <h2>Create your MyChat</h2>
+
+                    <p class="form-info">
+                        Your name will become your permanent MyChat ID.
+                    </p>
+
+                    <div class="input-group">
+                        <label for="signupName">Name</label>
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Enter your name"
+                            autocomplete="off"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="signupEmail">Email</label>
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="signupPassword">Password</label>
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                        >
+                    </div>
+
+
+                    <button id="signupBtn" class="primary-btn">
+                        Create Account
+                    </button>
+
+
+                    <p id="signupMessage" class="message"></p>
+
+
+                    <p class="switch-text">
+                        Already have an account?
+                        <button id="showLoginBtn" class="link-btn">
+                            Login
+                        </button>
+                    </p>
+
+                </div>
+
+
+
+                <!-- LOGIN -->
+                <div id="loginBox" class="auth-box hidden">
+
+                    <h2>Welcome back</h2>
+
+                    <p class="form-info">
+                        Login to continue to MyChat.
+                    </p>
+
+
+                    <div class="input-group">
+                        <label for="loginEmail">Email</label>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            autocomplete="email"
+                        >
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="loginPassword">Password</label>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                        >
+                    </div>
+
+
+                    <button id="loginBtn" class="primary-btn">
+                        Login
+                    </button>
+
+
+                    <p id="loginMessage" class="message"></p>
+
+
+                    <p class="switch-text">
+                        Don't have an account?
+                        <button id="showSignupBtn" class="link-btn">
+                            Create account
+                        </button>
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CHAT SCREEN
+        ========================== -->
+        <section id="chatSection" class="chat-section hidden">
+
+            <!-- HEADER -->
+            <header class="chat-header">
+
+                <div class="brand">
+                    <div class="brand-logo">
+                        M
+                    </div>
+
+                    <div class="brand-info">
+                        <h1>MyChat</h1>
+                        <span id="onlineStatus">
+                            Online
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="user-menu">
+
+                    <span id="currentUsername">
+                        User
+                    </span>
+
+                    <button id="logoutBtn" class="logout-btn">
+                        Logout
+                    </button>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- COMMON CHAT -->
+            <main id="messagesContainer" class="messages-container">
+
+                <!-- Messages will be added by chat.js -->
+
+            </main>
+
+
+
+            <!-- MESSAGE INPUT -->
+            <footer class="message-area">
+
+                <div class="message-box">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Write a message..."
+                        autocomplete="off"
+                    >
+
+                    <button id="sendBtn" class="send-btn">
+                        Send
+                    </button>
+
+                </div>
+
+            </footer>
+
+        </section>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+    <script src="chat.js"></script>
+
+</body>
+</html>
